@@ -1,0 +1,44 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Button = ({ children, variant = 'primary', to, href, className = '', icon, ...props }) => {
+  const baseStyles = "inline-flex items-center justify-center gap-2 font-bold transition-all active:scale-95 px-6 py-3 rounded-lg";
+  
+  const variants = {
+    primary: "bg-[#0d59f2] text-white",
+    cta: "bg-[#0d59f2] text-white px-8 py-4 rounded-xl text-lg",
+    outline: "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white px-8 py-4 rounded-xl text-lg",
+  };
+
+  const combinedClasses = `${baseStyles} ${variants[variant]} ${className}`;
+
+  // 1. If 'to' is provided, use React Router Link
+  if (to) {
+    return (
+      <Link to={to} className={combinedClasses} {...props}>
+        {icon && <span className="material-symbols-outlined">{icon}</span>}
+        {children}
+      </Link>
+    );
+  }
+
+  // 2. If 'href' is provided, use a standard <a> tag
+  if (href) {
+    return (
+      <a href={href} className={combinedClasses} target="_blank" rel="noreferrer" {...props}>
+        {icon && <span className="material-symbols-outlined">{icon}</span>}
+        {children}
+      </a>
+    );
+  }
+
+  // 3. Otherwise, just return a normal button
+  return (
+    <button className={combinedClasses} {...props}>
+      {icon && <span className="material-symbols-outlined">{icon}</span>}
+      {children}
+    </button>
+  );
+};
+
+export default Button;

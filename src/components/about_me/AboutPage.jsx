@@ -1,0 +1,118 @@
+import React from 'react';
+import IMG from '../../assets/profile3.jpg';
+import PDF from '../../assets/new_cv.pdf';
+import Button from '../miscelenous/ButtonVariant';
+import SkillCard from './SkillCard';
+import TimelineItem from './TimelineItem';
+import SectionHeader from './SectionHeader';
+
+const AboutPage = () => {
+  const skills = [
+    { icon: 'token', title: 'UI/UX Design', description: 'Figma, Adobe XD, ProtoPie. Creating high-fidelity prototypes.' },
+    { icon: 'code', title: 'Frontend Dev', description: 'React, TypeScript, Tailwind CSS. Building performant interfaces.' },
+    { icon: 'database', title: 'Backend Basics', description: 'Node.js, GraphQL, PostgreSQL. Handling data integration.' },
+    { icon: 'auto_graph', title: 'Strategy', description: 'User Research, A/B Testing. Aligning design with business goals.' },
+    { icon: 'terminal', title: 'DevOps', description: 'Git, Docker, CI/CD pipelines. Streamlining deployment.' },
+    { icon: 'brush', title: 'Brand Identity', description: 'Logos, Typography, Color Theory. Developing brand narratives.' },
+  ];
+
+  const experience = [
+    {
+      date: '2021 - Present',
+      title: 'Senior Product Designer',
+      company: 'TechNova Systems',
+      icon: 'work',
+      description: 'Leading the design language for an enterprise-level SaaS platform.'
+    },
+    {
+      date: '2018 - 2021',
+      title: 'UI Developer',
+      company: 'CreativePulse Studio',
+      icon: 'palette',
+      description: 'Bridged the gap between design and code with pixel-perfect components.'
+    },
+    {
+      date: 'Graduated 2018',
+      title: 'B.S. Computer Science',
+      company: 'University of Applied Design',
+      icon: 'school',
+      description: 'Focused on Human-Computer Interaction and Advanced Algorithms.'
+    }
+  ];
+
+  return (
+    <div className="py-24 bg-[#1a1a1a]/30 dark:bg-[#101622] text-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
+      <main className="max-w-5xl mx-auto px-6 lg:px-10 py-12 space-y-20">
+        
+        {/* Bio Hero Section */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#0d59f2] to-blue-400 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <img 
+                // src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6qos0x-QQD9x9rSgYVFEohI43LsmHry8wjj1ugnDtJrErhmrLYANOtNOhnqlKiWoU7q-LaWlLnp7n0dZ8BxmP8ZjcwX-rn6-b7BkLEODqklUAI3ReE_Mmnib4FXT8oS7iYUAGpXWoW14GZTeX8H4bXnvsj_DpQaKV_bNOGZPDU607hA0_PtLBeydQBtXhFUGuagSDCP6MTO-tdc3EaNaMvoTCGibGHdTM7z4rOr82NkfiSduvzpI_S7yx3kYWvN0_0RKN-DrOJ2c" 
+                src={IMG}
+                alt="Portrait" 
+                className="relative rounded-xl w-full max-w-sm aspect-square object-cover shadow-2xl"
+              />
+            </div>
+          </div>
+          <div className="lg:col-span-7 space-y-6">
+            <div className="space-y-2">
+              <span className="text-[#0d59f2] font-bold tracking-widest uppercase text-l">A little bit about me</span>
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-white">Designing Digital Experiences powered by AI</h1>
+            </div>
+            <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+              I am a Senior AI Engineer with a passion for building intelligent systems and scalable solutions. For over 8 years, I have been bridging the gap between cutting-edge machine learning and practical real-world applications.
+            </p>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Button href={PDF} variant="outline">View Resume</Button>
+              <Button to="/portfolio" variant="cta" icon="mail">View Portfolio</Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Skills Grid */}
+        <section className="space-y-10">
+          <SectionHeader 
+            center 
+            title="Technical Proficiency" 
+            subtitle="My toolkit spans across the entire product lifecycle, from initial research to front-end implementation." 
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((skill, i) => (
+              <SkillCard key={i} {...skill} />
+            ))}
+          </div>
+        </section>
+
+        {/* Experience Timeline */}
+        <section className="space-y-10">
+          <div className="flex items-center justify-between">
+            <h2 className="text-3xl font-bold text-[#0d59f2]/80">Professional Journey</h2>
+            <span className="hidden sm:block h-px flex-1 bg-slate-200 dark:bg-slate-800 mx-8"></span>
+          </div>
+          <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-[#0d59f2] before:via-slate-200 dark:before:via-slate-800 before:to-transparent">
+            {experience.map((item, i) => (
+              <TimelineItem key={i} {...item} isOdd={true} />
+            ))}
+          </div>
+        </section>
+
+        {/* Footer CTA */}
+        <section className="pt-10 border-t border-slate-200 dark:border-slate-800">
+          <div className="rounded-2xl bg-[#0d59f2] p-8 lg:p-12 text-center text-white space-y-6">
+            <h2 className="text-3xl font-bold">Ready to start a project?</h2>
+            <p className="text-white/80 max-w-lg mx-auto">Currently available for freelance work and full-time opportunities.</p>
+            <div className="flex justify-center gap-4">
+              <Button to="/contact" variant="outline">Hire Me</Button>
+              <Button to="/contact" variant="outline">Contact Me</Button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default AboutPage;
