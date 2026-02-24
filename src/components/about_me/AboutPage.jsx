@@ -8,35 +8,58 @@ import SectionHeader from './SectionHeader';
 
 const AboutPage = () => {
   const skills = [
-    { icon: 'token', title: 'UI/UX Design', description: 'Figma, Adobe XD, ProtoPie. Creating high-fidelity prototypes.' },
+    { icon: 'token', title: 'UI/UX Design', description: 'Stitch, Figma, Adobe XD, ProtoPie. Creating high-fidelity prototypes.' },
     { icon: 'code', title: 'Frontend Dev', description: 'React, TypeScript, Tailwind CSS. Building performant interfaces.' },
-    { icon: 'database', title: 'Backend Basics', description: 'Node.js, GraphQL, PostgreSQL. Handling data integration.' },
-    { icon: 'auto_graph', title: 'Strategy', description: 'User Research, A/B Testing. Aligning design with business goals.' },
-    { icon: 'terminal', title: 'DevOps', description: 'Git, Docker, CI/CD pipelines. Streamlining deployment.' },
+    { icon: 'database', title: 'Backend Basics', description: 'Node.js, FastAPI, Python, PostgreSQL. Handling data integration.' },
+    { icon: 'auto_graph', title: 'Strategy', description: 'User Research, API Testing. Aligning design with business goals.' },
+    { icon: 'terminal', title: 'DevOps', description: 'Git, Mercurial, Docker, CI/CD pipelines. Streamlining deployment.' },
     { icon: 'brush', title: 'Brand Identity', description: 'Logos, Typography, Color Theory. Developing brand narratives.' },
+    { icon: 'code', title: 'ML & AI', description: 'Tensorflow, Pytorch, Keras, NLP, Llamaindex, Langchain, Machine Learning, Neural Networks, Data Science. Building intelligent systems.' },
+
   ];
 
   const experience = [
     {
       date: '2021 - Present',
-      title: 'Senior Product Designer',
-      company: 'TechNova Systems',
+      title: 'Project Lead/Project developer datascience and AI',
+      company: 'Interface Projects GmbH',
       icon: 'work',
-      description: 'Leading the design language for an enterprise-level SaaS platform.'
+      description: 'Lead the development of AI-driven solutions, overseeing project lifecycles from concept to deployment. Collaborated with cross-functional teams to deliver innovative products that leverage machine learning and data science techniques.'
     },
     {
-      date: '2018 - 2021',
-      title: 'UI Developer',
-      company: 'CreativePulse Studio',
+      date: '2020 - 2021',
+      title: 'UI Developer and Frontend Developer',
+      company: 'Icigaill GmbH',
+      icon: 'work',
+      description: 'Using Vue.js to implement API endpoints in the frontend while bridging the gap between design and code with pixel-perfect components.'
+    },
+    {
+      date: '2025 - 2026',
+      title: 'RAG-Driven Generative AI Developer',
+      company: 'Self Study and Personal Projects',
       icon: 'palette',
-      description: 'Bridged the gap between design and code with pixel-perfect components.'
+      description: 'Building a Retrieval-Augmented Generation (RAG) system using Llamaindex and Langchain to create a knowledge graph for a personal project. This involved integrating various data sources, implementing natural language processing techniques, and fine-tuning the model to generate accurate and contextually relevant responses.'
+    },
+    {
+      date: '2025 - 2026',
+      title: 'Hands-On Genetic Algorithms with Python',
+      company: 'Self Study and Personal Projects',
+      icon: 'palette',
+      description: 'Implemented and optimized genetic algorithms in Python to solve complex optimization problems.'
     },
     {
       date: 'Graduated 2018',
-      title: 'B.S. Computer Science',
-      company: 'University of Applied Design',
+      title: 'M.S. Computer Science and Media',
+      company: 'Bauhaus-Universität Weimar',
       icon: 'school',
-      description: 'Focused on Human-Computer Interaction and Advanced Algorithms.'
+      description: 'Focused on Human-Computer Interaction and Advanced Algorithms. Thesis on Cracked Image Classification using Convolutional Neural Networks.'
+    },
+    {
+      date: 'Graduated 2018',
+      title: 'B.S. Mathematics and Computer Science',
+      company: 'Federal University of Technology Owerri, Nigeria',
+      icon: 'school',
+      description: 'Focused on Human-Computer Interaction and Advanced Algorithms. Thesis on an encription algorithm based on the Collatz conjecture.'
     }
   ];
 
@@ -50,7 +73,6 @@ const AboutPage = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#0d59f2] to-blue-400 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <img 
-                // src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6qos0x-QQD9x9rSgYVFEohI43LsmHry8wjj1ugnDtJrErhmrLYANOtNOhnqlKiWoU7q-LaWlLnp7n0dZ8BxmP8ZjcwX-rn6-b7BkLEODqklUAI3ReE_Mmnib4FXT8oS7iYUAGpXWoW14GZTeX8H4bXnvsj_DpQaKV_bNOGZPDU607hA0_PtLBeydQBtXhFUGuagSDCP6MTO-tdc3EaNaMvoTCGibGHdTM7z4rOr82NkfiSduvzpI_S7yx3kYWvN0_0RKN-DrOJ2c" 
                 src={IMG}
                 alt="Portrait" 
                 className="relative rounded-xl w-full max-w-sm aspect-square object-cover shadow-2xl"
