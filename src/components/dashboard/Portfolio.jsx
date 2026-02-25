@@ -31,8 +31,8 @@ const Portfolio = () => {
             <h2 className="text-3xl font-black text-white mb-4">Selected Work</h2>
             <p className="text-slate-400">A collection of projects I'm proud of.</p>
           </div>
-          <a href="/portfolio" className="text-[#0d59f2] font-bold flex items-center gap-2 hover:underline">
-            View Portfolio
+          <a href="/about" className="text-[#0d59f2] font-bold flex items-center gap-2 hover:underline">
+            About Me
             <span className="material-symbols-outlined">north_east</span>
           </a>
         </div>

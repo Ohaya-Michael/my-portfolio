@@ -87,8 +87,8 @@ const AboutPage = () => {
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
               I am a Senior AI Engineer with a passion for building intelligent systems and scalable solutions. For over 8 years, I have been bridging the gap between cutting-edge machine learning and practical real-world applications.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button href={PDF} variant="outline">View Resume</Button>
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <Button href={PDF} variant="outline" icon="download">View Resume</Button>
               <Button to="/portfolio" variant="cta" icon="mail">View Portfolio</Button>
             </div>
           </div>
@@ -126,7 +126,7 @@ const AboutPage = () => {
           <div className="rounded-2xl bg-[#0d59f2] p-8 lg:p-12 text-center text-white space-y-6">
             <h2 className="text-3xl font-bold">Ready to start a project?</h2>
             <p className="text-white/80 max-w-lg mx-auto">Currently available for freelance work and full-time opportunities.</p>
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button to="/contact" variant="outline">Hire Me</Button>
               <Button to="/contact" variant="outline">Contact Me</Button>
             </div>
