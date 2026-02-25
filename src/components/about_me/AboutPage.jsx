@@ -27,13 +27,6 @@ const AboutPage = () => {
       description: 'Lead the development of AI-driven solutions, overseeing project lifecycles from concept to deployment. Collaborated with cross-functional teams to deliver innovative products that leverage machine learning and data science techniques.'
     },
     {
-      date: '2020 - 2021',
-      title: 'UI Developer and Frontend Developer',
-      company: 'Icigaill GmbH',
-      icon: 'work',
-      description: 'Using Vue.js to implement API endpoints in the frontend while bridging the gap between design and code with pixel-perfect components.'
-    },
-    {
       date: '2025 - 2026',
       title: 'RAG-Driven Generative AI Developer',
       company: 'Self Study and Personal Projects',
@@ -46,6 +39,13 @@ const AboutPage = () => {
       company: 'Self Study and Personal Projects',
       icon: 'palette',
       description: 'Implemented and optimized genetic algorithms in Python to solve complex optimization problems.'
+    },
+    {
+      date: '2020 - 2021',
+      title: 'UI Developer and Frontend Developer',
+      company: 'Icigaill GmbH',
+      icon: 'work',
+      description: 'Using Vue.js to implement API endpoints in the frontend while bridging the gap between design and code with pixel-perfect components.'
     },
     {
       date: 'Graduated 2018',
