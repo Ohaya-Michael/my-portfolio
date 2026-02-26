@@ -54,8 +54,14 @@ const AboutPage = () => {
       icon: 'school',
       description: 'Focused on Human-Computer Interaction and Advanced Algorithms. Thesis on Cracked Image Classification using Convolutional Neural Networks.'
     },
+    {date: '2009 - 2015',
+      title: 'UI/UX Designer and Frontend Developer',
+      company: 'Trustee Drugs and Medical Supplies Limited, Nigeria',
+      icon: 'palette',
+      description: 'Designing and implementing user interfaces for web and mobile applications using modern design principles and tools like Figma, Sketch, and Adobe XD.'
+    },
     {
-      date: 'Graduated 2018',
+      date: 'Graduated 2008',
       title: 'B.S. Mathematics and Computer Science',
       company: 'Federal University of Technology Owerri, Nigeria',
       icon: 'school',
