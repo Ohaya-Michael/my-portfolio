@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import Input from './InputPage';
 import TextArea from './TextArea';
-import Button from '../about_me/AboutPageButton'; // Assuming existing Button component
+// import Button from '../about_me/AboutPageButton'; // Assuming existing Button component
 
 const ContactForm = () => {
   const [status, setStatus] = useState('idle'); // idle, sending, success
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: 'New Project Inquiry',
+    message: '',
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('sending');
     // Simulate API call
+    console.log('Sending form data:', formData);
     setTimeout(() => setStatus('success'), 1500);
   };
 
@@ -28,13 +35,13 @@ const ContactForm = () => {
     <div className="bg-white dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-[#0d59f2]/5">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
-          <Input label="Full Name" icon="person" placeholder="John Doe" required />
-          <Input label="Email Address" icon="alternate_email" type="email" placeholder="john@example.com" required />
+          <Input onChange={(e) => setFormData({...formData, name: e.target.value})} label="Full Name" icon="person" placeholder="John Doe" required />
+          <Input onChange={(e) => setFormData({...formData, email: e.target.value})} label="Email Address" icon="alternate_email" type="email" placeholder="john@example.com" required />
         </div>
         
         <div className="space-y-2">
           <label className="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Subject</label>
-          <select className="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 focus:ring-2 focus:ring-[#0d59f2] focus:border-transparent outline-none transition-all text-black dark:text-white">
+          <select onChange={(e) => setFormData({...formData, subject: e.target.value})} className="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 focus:ring-2 focus:ring-[#0d59f2] focus:border-transparent outline-none transition-all text-black dark:text-white">
             <option>New Project Inquiry</option>
             <option>General Question</option>
             <option>Speaking Request</option>
@@ -42,7 +49,7 @@ const ContactForm = () => {
           </select>
         </div>
 
-        <TextArea label="Your Message" placeholder="Tell me about your project or just say hi!" required />
+        <TextArea onChange={(e) => setFormData({...formData, message: e.target.value})} label="Your Message" placeholder="Tell me about your project or just say hi!" required />
 
         <button 
           type="submit"
