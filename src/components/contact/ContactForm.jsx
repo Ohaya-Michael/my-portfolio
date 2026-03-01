@@ -34,7 +34,7 @@ const ContactForm = () => {
         
         <div className="space-y-2">
           <label className="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Subject</label>
-          <select className="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 focus:ring-2 focus:ring-[#0d59f2] focus:border-transparent outline-none transition-all dark:text-white">
+          <select className="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 focus:ring-2 focus:ring-[#0d59f2] focus:border-transparent outline-none transition-all text-black dark:text-white">
             <option>New Project Inquiry</option>
             <option>General Question</option>
             <option>Speaking Request</option>
