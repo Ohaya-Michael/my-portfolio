@@ -22,7 +22,7 @@ const ContactForm = () => {
 
   if (status === 'success') {
     return (
-      <div className="bg-white dark:bg-slate-900/50 p-12 rounded-2xl border border-slate-200 dark:border-slate-800 text-center space-y-4">
+      <div className="bg-slate-900/50  dark:bg-slate-900/50 p-12 rounded-2xl border border-slate-200 dark:border-slate-800 text-center space-y-4">
         <span className="material-symbols-outlined text-6xl text-green-500">check_circle</span>
         <h3 className="text-2xl font-bold">Message Sent!</h3>
         <p className="text-slate-500">I'll get back to you within 24-48 hours.</p>
@@ -32,7 +32,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="bg-white dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-[#0d59f2]/5">
+    <div className="bg-slate-900/50 dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-[#0d59f2]/5">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
           <Input onChange={(e) => setFormData({...formData, name: e.target.value})} label="Full Name" icon="person" placeholder="John Doe" required />
@@ -41,7 +41,7 @@ const ContactForm = () => {
         
         <div className="space-y-2">
           <label className="text-sm font-medium text-slate-700 dark:text-slate-300 ml-1">Subject</label>
-          <select onChange={(e) => setFormData({...formData, subject: e.target.value})} className="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 focus:ring-2 focus:ring-[#0d59f2] focus:border-transparent outline-none transition-all text-black dark:text-white">
+          <select onChange={(e) => setFormData({...formData, subject: e.target.value})} className="w-full bg-slate-800 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 focus:ring-2 focus:ring-[#0d59f2] focus:border-transparent outline-none transition-all text-white dark:text-white">
             <option>New Project Inquiry</option>
             <option>General Question</option>
             <option>Speaking Request</option>

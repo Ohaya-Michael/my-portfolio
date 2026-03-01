@@ -10,7 +10,7 @@ const Input = ({ label, icon, ...props }) => (
         </span>
       )}
       <input 
-        className={`w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-3 ${icon ? 'pl-12' : 'px-4'} pr-4 focus:ring-2 focus:ring-[#0d59f2] focus:border-transparent outline-none transition-all placeholder:text-slate-400 text-black dark:text-white`}
+        className={`w-full bg-slate-800 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-3 ${icon ? 'pl-12' : 'px-4'} pr-4 focus:ring-2 focus:ring-[#0d59f2] focus:border-transparent outline-none transition-all placeholder:text-slate-400 text-white dark:text-white`}
         {...props} 
       />
     </div>
