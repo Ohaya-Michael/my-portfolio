@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import Input from './InputPage';
 import TextArea from './TextArea';
+import axios from 'axios';
+
 // import Button from '../about_me/AboutPageButton'; // Assuming existing Button component
 
+const API_URL = "https://contact-form-api-a1hn.onrender.com/contact";
+
 const ContactForm = () => {
-  const [status, setStatus] = useState('idle'); // idle, sending, success
+  const [status, setStatus] = useState('idle');
+  const [errors, setErrors] = useState({});
+  const [apiError, setApiError] = useState("");
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,11 +20,48 @@ const ContactForm = () => {
     message: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
     // Simulate API call
     console.log('Sending form data:', formData);
+
+    setSending(true);
+    setApiError("");
+
+    try {
+      await axios.post(API_URL, {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        subject: formData.subject,
+        message: formData.message.trim(),
+      })
+      .then((contact_form) => {
+        console.log('Form submitted successfully:', contact_form.data);
+      });
+
+      setSent(true);
+    } catch (err) {
+      const detail = err.response?.data?.detail;
+      if (Array.isArray(detail)) {
+        const fieldErrors = {};
+        detail.forEach((e) => {
+          const field = e.loc?.[e.loc.length - 1];
+          if (field) fieldErrors[field] = e.msg;
+        });
+        setErrors(fieldErrors);
+      } else if (typeof detail === "string") {
+        setApiError(detail);
+      } else if (err.request) {
+        // Request was made but no response received (network down, server offline)
+        setApiError("Could not reach the server. Please check your connection and try again.");
+      } else {
+        setApiError(`Server error ${err.response?.status}. Please try again.`);
+      }
+    } finally {
+      setSending(false);
+    }
+
     setTimeout(() => setStatus('success'), 1500);
   };
 

@@ -23,8 +23,8 @@ const projectsData = [
     imageUrl: "https://media.istockphoto.com/id/2175713816/photo/elegant-living-room-with-beige-sofa-and-fireplace.webp?b=1&s=612x612&w=0&k=20&c=gTlWasHuBcM-YKRI6kb9gt9TmAEB6IJg-2YRX7nYc9Q="
   },
   {
-    title: "SaaS Onboarding Flow",
-    url: "https://example.com/saas-onboarding-flow",
+    title: "A Netflix clone, un-updated",
+    url: "https://netflix-clone-d20ff.web.app/",
     description: "End-to-end user onboarding experience for a B2B SaaS product, focusing on user retention.",
     imageUrl: "https://media.istockphoto.com/id/2174551157/de/foto/cyber-security-data-protection-business-technology-privacy-konzept.jpg?s=612x612&w=0&k=20&c=gDLUzTxBfnclqYbrYcxHEexBLgAcSedITWEUeM8Gny0="
   },
